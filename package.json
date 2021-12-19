@@ -3,6 +3,7 @@
     "version": "0.0.1+1",
     "description": "A template that uses typescript for node",
     "main": "./dist/src/index.js",
+    "types": "dist/src/index.d.ts",
     "scripts": {
         "build": "ts-node --project ./tsconfig.scripts.json ./scripts/build.ts",
         "build:docs": "ts-node --project ./tsconfig.scripts.json ./scripts/builddocs.ts",
@@ -14,7 +15,9 @@
         "version:build": "ts-node --project ./tsconfig.scripts.json ./scripts/version-increase-build.ts",
         "setup": "ts-node --project ./tsconfig.scripts.json ./scripts/setup.ts",
         "lint": "ts-node --project ./tsconfig.scripts.json ./scripts/lint.ts",
-        "lint:fix": "ts-node --project ./tsconfig.scripts.json ./scripts/lint.ts -- --fix"
+        "lint:fix": "ts-node --project ./tsconfig.scripts.json ./scripts/lint.ts -- --fix",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run test && npm run lint"
     },
     "repository": {
         "type": "git",
