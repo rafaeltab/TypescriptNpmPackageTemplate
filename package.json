@@ -20,6 +20,9 @@
         "type": "git",
         "url": "git+$repo_url$.git"
     },
+    "files": [
+        "dist/**/*"
+    ],
     "keywords": [],
     "author": "",
     "license": "ISC",
