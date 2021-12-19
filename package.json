@@ -1,6 +1,6 @@
 {
-    "name": "$proj_name$",
-    "version": "0.0.1+1",
+    "name": "@rafaeltab/typescript-npm-package-template",
+    "version": "0.0.2+1",
     "description": "A template that uses typescript for node",
     "main": "./dist/src/index.js",
     "types": "dist/src/index.d.ts",
@@ -16,13 +16,15 @@
         "setup": "ts-node --project ./tsconfig.scripts.json ./scripts/setup.ts",
         "lint": "ts-node --project ./tsconfig.scripts.json ./scripts/lint.ts",
         "lint:fix": "ts-node --project ./tsconfig.scripts.json ./scripts/lint.ts -- --fix",
+        "test": "ts-node --project ./tsconfig.scripts.json ./scripts/test.ts",
         "prepare": "npm run build",
-        "prepublishOnly": "npm run test && npm run lint",
-        "test": "ts-node --project ./tsconfig.scripts.json ./scripts/test.ts"
+        "prepublishOnly": "npm run test && npm run lint && npm run version:patch",
+        "publish": "ts-node --project ./tsconfig.scripts.json ./scripts/publish.ts",
+        "publish:private": "ts-node --project ./tsconfig.scripts.json ./scripts/publish.ts -- private"
     },
     "repository": {
         "type": "git",
-        "url": "git+$repo_url$.git"
+        "url": "git+https://github.com/rafaeltab/TypescriptNpmPackageTemplate.git"
     },
     "files": [
         "dist/**/*"
@@ -31,9 +33,9 @@
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "$repo_url$/issues"
+        "url": "https://github.com/rafaeltab/TypescriptNpmPackageTemplate/issues"
     },
-    "homepage": "$repo_url$#readme",
+    "homepage": "https://github.com/rafaeltab/TypescriptNpmPackageTemplate#readme",
     "devDependencies": {
         "@types/chai": "^4.3.0",
         "@types/glob": "^7.2.0",
