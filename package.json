@@ -1,6 +1,6 @@
 {
     "name": "@rafaeltab/typescript-npm-package-template",
-    "version": "0.0.2+1",
+    "version": "0.0.1+1",
     "description": "A template that uses typescript for node",
     "main": "./dist/src/index.js",
     "types": "dist/src/index.d.ts",
@@ -20,7 +20,8 @@
         "prepare": "npm run build",
         "prepublishOnly": "npm run test && npm run lint && npm run version:patch",
         "publish": "ts-node --project ./tsconfig.scripts.json ./scripts/publish.ts",
-        "publish:private": "ts-node --project ./tsconfig.scripts.json ./scripts/publish.ts -- private"
+        "publish:private": "ts-node --project ./tsconfig.scripts.json ./scripts/publish.ts -- private",
+        "example": "ts-node --project ./tsconfig.scripts.json ./scripts/example.ts"
     },
     "repository": {
         "type": "git",
